@@ -21,6 +21,9 @@ const Button = ({
         !!isLoading ? "opacity-50 pointer-events-none" : "",
         className
       )}
+      // className={`p-4 text-base font-semibold rounded-xl flex justify-center items-center text-white min-h-[56px] ${
+      //   !!isLoading ? "opacity-50 pointer-events-none" : ""
+      // } ${className}`}
       type={type}
       {...rest}
     >

@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { withErrorBoundary } from "react-error-boundary";
 import ErrorComponent from "../common/ErrorComponent";
 import className from "../../utils/classNames";
-import classNames from "../../utils/classNames";
 
 const Input = (props) => {
   const {
@@ -26,14 +25,19 @@ const Input = (props) => {
       <input
         id={name}
         type={type}
-        className={classNames(
-          "w-full px-6 py-4 text-sm font-medium border rounded-xl placeholder:text-text4 dark:placeholder:text-text2 dark:text-white bg-transparent",
+        className={className(
+          "w-full py-4 px-6 border rounded-xl text-sm font-medium dark:placeholder:text-text2 dark:text-white bg-transparent placeholder:text-text4",
           error.length > 0
             ? "border-error text-error"
             : "border-strock text-text1 dark:border-darkStroke",
           children ? "pr-16" : ""
         )}
-        placeholder={error.length <= 0 ? placeholder : ""}
+        // className={`w-full py-4 px-6 border rounded-xl text-sm font-medium dark:placeholder:text-text2 dark:text-white bg-transparent placeholder:text-text4 ${
+        //   error.length > 0
+        //     ? "border-error text-error"
+        //     : "border-strock text-text1 dark:border-darkStroke"
+        // } ${children ? "pr-16" : ""}`}
+        // placeholder={error.length <= 0 ? placeholder : ""}
         {...rest}
         {...field}
       />

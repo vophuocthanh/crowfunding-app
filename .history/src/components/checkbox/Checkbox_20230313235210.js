@@ -24,7 +24,7 @@ const Checkbox = ({
           onChange={() => {}}
           name={name}
         />
-        <span className={classNames(checked ? "" : "opacity-0 invisible")}>
+        <span className={`${checked ? "" : "opacity-0 invisible"}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="w-5 h-5"
