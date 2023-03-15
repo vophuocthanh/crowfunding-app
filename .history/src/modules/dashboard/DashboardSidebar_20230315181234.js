@@ -9,6 +9,7 @@ import {
   IconProfile,
   IconWithdraw,
 } from "../../components/icons";
+import classNames from "../../utils/classNames";
 const sidebarLinks = [
   {
     icon: <IconDashboard></IconDashboard>,

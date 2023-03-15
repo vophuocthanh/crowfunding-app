@@ -9,6 +9,7 @@ import {
   IconProfile,
   IconWithdraw,
 } from "../../components/icons";
+import classNames from "../../utils/classNames";
 const sidebarLinks = [
   {
     icon: <IconDashboard></IconDashboard>,
@@ -38,7 +39,7 @@ const sidebarLinks = [
   {
     icon: <IconLogout></IconLogout>,
     title: "Logout",
-    url: "/logout",
+    url: "/#logout",
     onClick: () => {},
   },
   {
