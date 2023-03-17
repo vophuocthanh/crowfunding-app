@@ -19,9 +19,6 @@ Quill.register("modules/imageUploader", ImageUploader);
 const categoriesData = ["architecture", "education"];
 
 const CampaignAddNew = () => {
-  useEffect(() => {
-    toast.success("Create campaign successfully");
-  }, []);
   const {
     handleSubmit,
     control,
@@ -48,7 +45,7 @@ const CampaignAddNew = () => {
         startDate,
         endDate,
       });
-      // toast.success("Create campaign successfully");
+      toast.success("Create campaign successfully");
       resetValue();
     } catch (error) {
       toast.error("Can not create new campaign");

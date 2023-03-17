@@ -21,7 +21,7 @@ const categoriesData = ["architecture", "education"];
 const CampaignAddNew = () => {
   useEffect(() => {
     toast.success("Create campaign successfully");
-  }, []);
+  });
   const {
     handleSubmit,
     control,

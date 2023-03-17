@@ -1,27 +1,24 @@
-import "react-quill/dist/quill.snow.css";
-import { apiURL, imgbbAPI } from "../../config/config";
-import { Button } from "../../components/button";
+import React, { useEffect, useMemo, useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { toast } from "react-toastify";
+import FormGroup from "../../components/common/FormGroup";
+import FormRow from "../../components/common/FormRow";
 import { Dropdown } from "../../components/dropdown";
 import { Input, Textarea } from "../../components/input";
 import { Label } from "../../components/label";
-import { toast } from "react-toastify";
-import { useForm } from "react-hook-form";
-import axios from "axios";
-import DatePicker from "react-date-picker";
-import FormGroup from "../../components/common/FormGroup";
-import FormRow from "../../components/common/FormRow";
-import ImageUpload from "../../components/image/ImageUpload";
-import ImageUploader from "quill-image-uploader";
-import React, { useEffect, useMemo, useState } from "react";
+import "react-quill/dist/quill.snow.css";
 import ReactQuill, { Quill } from "react-quill";
+import ImageUploader from "quill-image-uploader";
+import { Button } from "../../components/button";
+import DatePicker from "react-date-picker";
 import useOnChange from "../../hooks/useOnChange";
+import { apiURL, imgbbAPI } from "../../config/config";
+import ImageUpload from "../../components/image/ImageUpload";
 Quill.register("modules/imageUploader", ImageUploader);
 const categoriesData = ["architecture", "education"];
 
 const CampaignAddNew = () => {
-  useEffect(() => {
-    toast.success("Create campaign successfully");
-  }, []);
   const {
     handleSubmit,
     control,
@@ -48,7 +45,7 @@ const CampaignAddNew = () => {
         startDate,
         endDate,
       });
-      // toast.success("Create campaign successfully");
+      toast.success("Create campaign successfully");
       resetValue();
     } catch (error) {
       toast.error("Can not create new campaign");

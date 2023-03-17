@@ -13,7 +13,9 @@
       "password": "$2b$10$R3TnssJhrYuXi5/u4r9bou/mQ4xllqVf.13rmDqOaPUU4uWyFIUsi",
       "email": "trananhtuan400@gmail.com",
       "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6InR1YW50cmFuIiwiaWF0IjoxNjY1OTM5NzMyLCJleHAiOjE2NjYxMTI1MzJ9.9FhKpwnSU2bnUNFtLLOFEqC78_DK5a7xJrAzkr-jj1I",
-      "permissions": ["CREATE_CAMPAIGN"]
+      "permissions": [
+        "CREATE_CAMPAIGN"
+      ]
     }
   ],
   "categories": [],
@@ -65,6 +67,62 @@
       "endDate": "2022-08-23T17:12:09.546Z",
       "id": 3,
       "userId": 3
+    },
+    {
+      "title": "React-Date-Picker",
+      "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "goal": "100",
+      "amount": "200",
+      "prefilled": "10,20",
+      "video": "youtube.com/watch?v=u0N5a-AXHcA",
+      "category": "education",
+      "content": "<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>",
+      "startDate": "2023-03-16T17:00:00.000Z",
+      "endDate": "2023-03-24T17:00:00.000Z",
+      "id": 4
+    },
+    {
+      "title": "",
+      "short_description": "",
+      "goal": "",
+      "amount": "",
+      "prefilled": "",
+      "video": "",
+      "featured_image": "https://source.unsplash.com/random",
+      "content": "<p><br></p>",
+      "startDate": "2023-03-17T17:22:23.411Z",
+      "endDate": "2023-03-17T17:22:23.411Z",
+      "id": 5
+    },
+    {
+      "title": "",
+      "short_description": "",
+      "goal": "111",
+      "amount": "222",
+      "prefilled": "99,99",
+      "video": "",
+      "category": "architecture",
+      "content": "",
+      "startDate": "2023-03-17T17:57:46.293Z",
+      "endDate": "2023-03-17T17:57:46.293Z",
+      "id": 6
+    },
+    {
+      "title": "",
+      "short_description": "",
+      "goal": "",
+      "amount": "",
+      "prefilled": "",
+      "video": "",
+      "featured_image": {
+        "medium": "https://i.ibb.co/D5dF7rr/Hinh-nen-Songoku-4-K-2-K-800x451.jpg",
+        "thumb": "https://i.ibb.co/TmyGHWW/Hinh-nen-Songoku-4-K-2-K-800x451.jpg",
+        "url": "https://i.ibb.co/5BZ35KK/Hinh-nen-Songoku-4-K-2-K-800x451.jpg"
+      },
+      "content": "",
+      "startDate": "2023-03-17T18:12:01.893Z",
+      "endDate": "2023-03-17T18:12:01.893Z",
+      "id": 7
     }
   ]
 }
