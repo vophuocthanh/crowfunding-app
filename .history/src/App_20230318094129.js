@@ -53,7 +53,7 @@ function App() {
           ></Route>
         </Route>
         <Route path="/register" element={<SignUpPage></SignUpPage>}></Route>
-        <Route path="/login" element={<SignInPage></SignInPage>}></Route>
+        <Route path="/log-in" element={<SignInPage></SignInPage>}></Route>
       </Routes>
     </Suspense>
   );

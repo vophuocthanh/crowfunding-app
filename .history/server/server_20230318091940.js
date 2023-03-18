@@ -10,7 +10,7 @@ app.use(express.json());
 const cors = require("cors");
 app.use(cors());
 // app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
-const PORT = 3009;
+const PORT = 4001;
 app.get("/api/campaigns", verifyToken, (req, res) => {
   res.json(database.campaigns);
 });

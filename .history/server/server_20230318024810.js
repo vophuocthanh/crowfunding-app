@@ -7,12 +7,12 @@ let database = JSON.parse(rawdata);
 const jsonServer = require("json-server");
 const app = express();
 app.use(express.json());
-const cors = require("cors");
-app.use(cors());
 // app.use("/api", jsonServer.defaults(), jsonServer.router("db.json"));
-const PORT = 3009;
+
 app.get("/api/campaigns", verifyToken, (req, res) => {
-  res.json(database.campaigns);
+  res.json(
+    database.campaigns.filter((campaign) => campaign.userId === req.userId)
+  );
 });
 
-app.listen(PORT, () => console.log("Server started on port" + PORT));
+app.listen(4001, () => console.log("Server started on port 4001"));

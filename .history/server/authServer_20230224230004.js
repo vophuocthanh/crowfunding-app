@@ -63,6 +63,7 @@ app.post("/auth/login", (req, res) => {
       });
     }
     const tokens = generateTokens(user);
+
     updateRefreshToken(user.name, tokens.refreshToken);
     res.json(tokens);
   });
