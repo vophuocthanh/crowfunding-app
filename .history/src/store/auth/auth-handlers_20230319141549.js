@@ -1,0 +1,20 @@
+import { toast } from "react-toastify";
+import { call } from "redux-saga/effects";
+import { requestsAuthRegister } from "./auth-requests";
+
+export default function* handleAuthRegister(action) {
+  const { payload } = action;
+  try {
+    const response = yield call(requestsAuthRegister, payload);
+    if (response.status === 201) {
+      toast.success("Created new register successfully!");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+function* handleAuthLogin(action) {
+  console.log("function*handleAuthLogin ~ action:", action);
+  yield 1;
+}
+export { handleAuthLogin };
