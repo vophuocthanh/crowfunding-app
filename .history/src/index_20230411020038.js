@@ -1,27 +1,30 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { Provider } from "react-redux";
 import { store } from "./store/configureStore";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { permissions } from "./constants/permissions";
+import {
+  BrowserRouter,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LayoutDashboard from "./layout/LayoutDashboard";
+import DashBoardPage from "./pages/DashBoardPage";
+import CampaignPage from "./pages/CampaignPage";
+import PaymentPage from "./pages/PaymentPage";
+import WithdrawPage from "./pages/WithdrawPage";
+import UnauthorizePage from "./pages/UnauthorizePage";
+import SignUpPage from "./pages/SignUpPage";
+import SignInPage from "./pages/SignInPage";
 import RequiredAuthPage from "./pages/RequiredAuthPage";
-const SignUpPage = lazy(() => import("./pages/SignUpPage"));
-const SignInPage = lazy(() => import("./pages/SignInPage"));
-const DashBoardPage = lazy(() => import("./pages/DashBoardPage"));
-const CampaignPage = lazy(() => import("./pages/CampaignPage"));
-const StartCampaignPage = lazy(() => import("./pages/StartCampaignPage"));
-const LayoutDashboard = lazy(() => import("./layout/LayoutDashboard"));
-const CampaignView = lazy(() => import("./modules/campaign/CampaignView"));
-const PaymentPage = lazy(() => import("./pages/PaymentPage"));
-const WithdrawPage = lazy(() => import("./pages/WithdrawPage"));
-const LayoutPayment = lazy(() => import("./layout/LayoutPayment"));
-// const RequiredAuthPage = lazy(() => import("./pages/RequiredAuthPage"));
-const UnauthorizePage = lazy(() => import("./pages/UnauthorizePage"));
+import { permissions } from "./constants/permissions";
+import StartCampaignPage from "./pages/StartCampaignPage";
+import CampaignView from "./modules/campaign/CampaignView";
+import LayoutPayment from "./layout/LayoutPayment";
 
 const container = document.getElementById("root");
 const router = createBrowserRouter([
@@ -81,12 +84,10 @@ const router = createBrowserRouter([
 ]);
 createRoot(container).render(
   <Provider store={store}>
-    <Suspense fallback={<p>Loading...</p>}>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
-    </Suspense>
-    <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+    <RouterProvider router={router}>
+      <App />
+      <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+    </RouterProvider>
   </Provider>
 );
 

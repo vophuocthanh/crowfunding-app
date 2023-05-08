@@ -5,7 +5,11 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { Provider } from "react-redux";
 import { store } from "./store/configureStore";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import { permissions } from "./constants/permissions";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,6 +24,8 @@ const CampaignView = lazy(() => import("./modules/campaign/CampaignView"));
 const PaymentPage = lazy(() => import("./pages/PaymentPage"));
 const WithdrawPage = lazy(() => import("./pages/WithdrawPage"));
 const LayoutPayment = lazy(() => import("./layout/LayoutPayment"));
+const CheckoutPage = lazy(() => import("./pages/CheckoutPage"));
+const ShippingPage = lazy(() => import("./pages/ShippingPage"));
 // const RequiredAuthPage = lazy(() => import("./pages/RequiredAuthPage"));
 const UnauthorizePage = lazy(() => import("./pages/UnauthorizePage"));
 
@@ -81,12 +87,12 @@ const router = createBrowserRouter([
 ]);
 createRoot(container).render(
   <Provider store={store}>
-    <Suspense fallback={<p>Loading...</p>}>
-      <RouterProvider router={router}>
+    <RouterProvider router={router}>
+      <Suspense>
         <App />
-      </RouterProvider>
-    </Suspense>
-    <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+        <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+      </Suspense>
+    </RouterProvider>
   </Provider>
 );
 

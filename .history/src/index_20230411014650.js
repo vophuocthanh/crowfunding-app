@@ -5,21 +5,36 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import { Provider } from "react-redux";
 import { store } from "./store/configureStore";
-import { BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import LayoutDashboard from "./layout/LayoutDashboard";
 
 const container = document.getElementById("root");
-const root = createRoot(container);
-
-root.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-      <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
-    </BrowserRouter>
-  </Provider>
+const router = createBrowserRouter([
+  {
+    element: <LayoutDashboard></LayoutDashboard>,
+  },
+]);
+createRoot(container).render(
+  <RouterProvider router={router}>
+    <App />
+    <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+  </RouterProvider>
 );
+
+// root.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <App />
+//       <ToastContainer bodyClassName="font-primary text-sm"></ToastContainer>
+//     </BrowserRouter>
+//   </Provider>
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
